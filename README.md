@@ -24,3 +24,12 @@ Based on the execution strategy of advices, they are of following types.
 <b>After Throwing Advice:</b> This advice gets executed only when join point method throws exception, we can use it to rollback the transaction declaratively. We use @AfterThrowing annotation for this type of advice.
 <b>Around Advice:</b> This is the most important and powerful advice. This advice surrounds the join point method and we can also choose whether to execute the join point method or not. We can write advice code that gets executed before and after the execution of the join point method. It is the responsibility of around advice to invoke the join point method and return values if the method is returning something. We use @Around annotation to create around advice methods.
 The points mentioned above may sound confusing but when we will look at the implementation of Spring AOP, things will be more clear. Let’s start creating a simple Spring project with AOP implementations. Spring provides support for using AspectJ annotations to create aspects and we will be using that for simplicity. All the above AOP annotations are defined in org.aspectj.lang.annotation package.
+
+<b>Bean scopes:</b>
+There are five types of spring bean scopes:
+
+<b>Singleton</b> – only one instance of the spring bean will be created for the spring container. This is the default spring bean scope. While using this scope, make sure bean doesn’t have shared instance variables otherwise it might lead to data inconsistency issues.
+<b>prototype</b> – A new instance will be created every time the bean is requested from the spring container.
+<b>request</b> – This is same as prototype scope, however it’s meant to be used for web applications. A new instance of the bean will be created for each HTTP request.
+<b>session</b> – A new bean will be created for each HTTP session by the container.
+<b>global-session</b> – This is used to create global session beans for Portlet applications.
