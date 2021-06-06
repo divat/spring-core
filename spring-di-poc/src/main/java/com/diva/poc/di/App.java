@@ -7,7 +7,9 @@ import com.diva.poc.di.consumer.MyApplication;
 
 /**
  * Hello world!
- *
+ * Spring IOC resolves dependency via DI.
+ * Spring IOC is responsible for injecting dependencies 
+ * through either constructor or setter injection
  */
 public class App 
 {
